@@ -1,15 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-var wwwPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwrot");
-app.UseDefaultFiles(new DefaultFilesOptions 
-{ 
-    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(wwwPath)
-});
-app.UseStaticFiles(new StaticFileOptions 
-{ 
-    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(wwwPath)
-});
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 var jediScore = 0;
 var sithScore = 0;
